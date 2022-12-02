@@ -59,7 +59,7 @@ class AzMagic(Magics):
                     # If we get back an OData response,
                     # attempt to return the `value` array
                     # as a pandas DataFrame.
-                    if "@odata.context" in result and "value" and result:
+                    if "@odata.context" in result and "value" in result:
                         return pd.json_normalize(result["value"])
                     else:
                         return result
